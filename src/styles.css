@@ -1,0 +1,96 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --shadow-accent: 0 20px 40px -12px color-mix(in oklab, var(--accent) 35%, transparent);
+  --shadow-card: 0 24px 48px -20px oklch(0.129 0.042 264.695 / 0.18);
+}
+
+:root {
+  --radius: 0.75rem;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+
+  /* Slate-950 base ink */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.205 0.04 265);
+  --ink: oklch(0.205 0.04 265);
+  --ink-soft: oklch(0.45 0.03 260);
+
+  --surface: oklch(0.985 0.005 260);
+  --surface-foreground: oklch(0.205 0.04 265);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.205 0.04 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.205 0.04 265);
+
+  /* Slate 950 as primary dark */
+  --primary: oklch(0.205 0.04 265);
+  --primary-foreground: oklch(0.985 0.005 260);
+
+  --secondary: oklch(0.96 0.006 260);
+  --secondary-foreground: oklch(0.205 0.04 265);
+  --muted: oklch(0.96 0.006 260);
+  --muted-foreground: oklch(0.5 0.02 260);
+
+  /* Canterbury rust / orange accent */
+  --accent: oklch(0.685 0.18 45);
+  --accent-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0.005 260);
+  --border: oklch(0.93 0.01 260);
+  --input: oklch(0.93 0.01 260);
+  --ring: oklch(0.685 0.18 45);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
